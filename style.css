@@ -1,0 +1,112 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+:root {
+    /* ### Primary */
+
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+
+    /* ### Neutral */
+
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--pale-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--desaturated-blue);
+}
+
+h1 {
+    color: var(--dark-blue);
+}
+
+p {
+    font-size: 16px;
+    color: var(--desaturated-blue);
+    display: block;
+}
+
+button {
+    outline: none;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.summary-card {
+    width: 400px;
+    height: max(600px, 75vh);
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.summary-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.order > div {
+    display: flex;
+    flex-grow: 1;
+
+}
+
+.order > div > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan {
+    color: var(--dark-blue);
+    font-weight: 700;
+}
+
+.change-order {
+    color: var(--bright-blue);
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.proceed, .cancel {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.proceed {
+    background-color: var(--bright-blue);
+    color: white;
+}
+
+.cancel {
+    color: var(--desaturated-blue)
+}
