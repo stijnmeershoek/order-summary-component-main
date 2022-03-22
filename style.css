@@ -1,112 +1,182 @@
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Red Hat Display', sans-serif;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
 }
 
 :root {
-    /* ### Primary */
+  /* ### Primary */
 
-    --pale-blue: hsl(225, 100%, 94%);
-    --bright-blue: hsl(245, 75%, 52%);
+  --pale-blue: hsl(225, 100%, 94%);
+  --bright-blue: hsl(245, 75%, 52%);
 
-    /* ### Neutral */
+  /* ### Neutral */
 
-    --very-pale-blue: hsl(225, 100%, 98%);
-    --desaturated-blue: hsl(224, 23%, 55%);
-    --dark-blue: hsl(223, 47%, 23%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--pale-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--desaturated-blue);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--pale-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--desaturated-blue);
 }
 
 h1 {
-    color: var(--dark-blue);
+  color: var(--dark-blue);
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 10px;
 }
 
 p {
-    font-size: 16px;
-    color: var(--desaturated-blue);
-    display: block;
+  font-size: 16px;
+  color: var(--desaturated-blue);
+  display: block;
+  line-height: 1.5;
 }
 
 button {
-    outline: none;
-    border: none;
-    text-align: center;
-    cursor: pointer;
+  outline: none;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.background {
+  position: absolute;
+  inset: 0 0 0 0;
+  z-index: -1;
+  background: url(./images/pattern-background-desktop.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .summary-card {
-    width: 400px;
-    height: max(600px, 75vh);
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 20px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  width: 425px;
+  height: 650px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.illustration-hero {
+  width: 100%;
+  aspect-ratio: 450 / 220;
+  background: url(./images/illustration-hero.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .summary-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
 }
 
 .order {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--very-pale-blue);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .order > div {
-    display: flex;
-    flex-grow: 1;
-
+  display: flex;
+  flex-grow: 1;
 }
 
 .order > div > div {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.order svg {
+  margin-right: 20px;
 }
 
 .plan {
-    color: var(--dark-blue);
-    font-weight: 700;
+  color: var(--dark-blue);
+  font-weight: 900;
 }
 
 .change-order {
-    color: var(--bright-blue);
-    text-decoration: underline;
-    cursor: pointer;
-    font-weight: 700;
+  color: var(--bright-blue);
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 14px;
+  opacity: 1;
+  transition: opacity 125ms ease-in-out;
 }
 
-.proceed, .cancel {
-    width: 100%;
-    padding: 15px;
-    border-radius: 10px;
-    font-weight: 700;
+.summary-buttons {
+  width: 100%;
+}
+
+.proceed,
+.cancel {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 900;
 }
 
 .proceed {
-    background-color: var(--bright-blue);
-    color: white;
+  background-color: var(--bright-blue);
+  color: white;
+  -webkit-box-shadow: 0px 15px 40px -10px hsl(245 75% 52% / 0.5);
+  box-shadow: 0px 15px 40px -10px hsl(245 75% 52% / 0.5);
+  opacity: 1;
+  transition: opacity 125ms ease-in-out;
+}
+
+.proceed:hover,
+.proceed:focus-visible {
+  opacity: 0.75;
+}
+
+.change-order:hover,
+.change-order:focus-visible {
+  text-decoration: none;
+  opacity: 0.75;
 }
 
 .cancel {
-    color: var(--desaturated-blue)
+  margin-top: 10px;
+  background-color: transparent;
+  color: var(--desaturated-blue);
+  transition: color 125ms ease-in-out;
+}
+
+.cancel:hover,
+.cancel:focus-visible {
+  color: var(--dark-blue);
+}
+
+@media screen and (max-width: 700px) {
+  .background {
+    background: url(./images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
